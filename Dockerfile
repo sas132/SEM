@@ -1,2 +1,2 @@
 FROM nginx:latest
-RUN ~/file.js
+RUN touch ~/file.js
