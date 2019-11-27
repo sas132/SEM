@@ -1,0 +1,10 @@
+{
+  "name": "HotBurger",
+  "version": "1",
+  "description": "HotBurger service on Docker",
+  "author": "Sarah Stevenson"
+  "main": "file.js"
+  "scripts": {
+    "start": "node file.js"
+  }
+}
