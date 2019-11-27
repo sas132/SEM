@@ -74,19 +74,19 @@ var prompts = readline.createInterface(process.stdin, process.stdout);
           requestCount++;
           if(input.substring(9, 16) == "/Hotdog")
           {
-              console.log("Number of Hotdog sold: " + HotdogSales);
+              console.log("Number of Hotdog sold: " + hotdogSales);
           }
           else if(input.substring(9, 16) == "/Cookie")
           {
-              console.log("Number of Cookie sold: " + CookieSales);
+              console.log("Number of Cookie sold: " + cookieSales);
           }
           else if(input.substring(9, 14) == "/Soda")
           {
-              console.log("Number of Soda sold: " + SodaSales);
+              console.log("Number of Soda sold: " + sodaSales);
           }
           else if(input.substring(9, 19) == "/Hamburger")
           {
-              console.log("Number of Hamburger sold: " + HamburgerSales);
+              console.log("Number of Hamburger sold: " + hamSales);
           }
           else
           {
@@ -98,28 +98,53 @@ var prompts = readline.createInterface(process.stdin, process.stdout);
         {
           if(input.substring(9, 16) == "/Hotdog")
           {
-              var tempNum = parseInt(input.substring(17, input.length));
-              HotdogSales = tempNum;
+            var tempNum = parseInt(input.substring(17, input.length));
+            hotdogSales = tempNum;
+			  
+			if(topSellerNum < hotdogSales)
+            {
+                topSellerNum = hotdogSales;
+                topSellerStr = "Hotdog";
+            }
           }
           else if(input.substring(9, 16) == "/Cookie")
           {
-            var tempNum = parseInt(input.substring(17, input.length));
-              CookieSales = tempNum;
+			var tempNum = parseInt(input.substring(17, input.length));
+            cookieSales = tempNum;
+			
+			if(topSellerNum < cookieSales)
+            {
+                topSellerNum = cookieSales;
+                topSellerStr = "Cookie";
+            }
           }
           else if(input.substring(9, 14) == "/Soda")
           {
-            var tempNum = parseInt(input.substring(15, input.length));
-            SodaSales = tempNum;
+			var tempNum = parseInt(input.substring(15, input.length));
+			sodaSales = tempNum;
+			
+			if(topSellerNum < sodaSales)
+            {
+                topSellerNum = sodaSales;
+                topSellerStr = "Soda";
+            }
           }
           else if(input.substring(9, 19) == "/Hamburger")
           {
             var tempNum = parseInt(input.substring(20, input.length));
-            HamburgerSales = tempNum;
+            hamSales = tempNum;
+			
+			if(topSellerNum < hamSales)
+            {
+                topSellerNum = hamSales;
+                topSellerStr = "Hamburger";
+            }
           }
           else
           {
-              console.log(input + " is an invalid command.");
+            console.log(input + " is an invalid command.");
           }
+		  continuslyAsk();
         }
         else if(input.substring(0, 9) == "/purchase")
         {
