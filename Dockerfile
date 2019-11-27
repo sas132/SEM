@@ -1,3 +1,17 @@
-FROM node:7
+FROM node:10
+
+# create app directory
+WORKDIR /usr/src/app
+
+# package describes the project
+COPY package*.json ./
+
 RUN npm install
-CMD node ~/file.js
+
+# bundles everything
+COPY . .
+
+# localhost I believe??
+EXPOSE 80
+
+CMD [ "node", "file.js" ]
