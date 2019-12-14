@@ -10,4 +10,11 @@
   "dependencies": {
     "express": "^4.17.1"
   }
+  "eslintConfig": {
+      "env": {
+          "semi": ["error", "always"]
+          "id-length": ["error", "min":3]
+          "no-tabs": ["error", "always"]
+      }
+   }
 }
