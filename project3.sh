@@ -2,4 +2,4 @@
 
 docker build -t hotburger-service:latest
 
-docker run -it -p 8080:80 hotburger-service
+docker run -it -p 80:80 hotburger-service
